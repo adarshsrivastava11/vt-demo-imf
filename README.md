@@ -7,7 +7,7 @@ pip install matplotlib
 pip install mpld3
 ## Running the Server - 
 ```
-1. git clone 
+1. git clone git@github.com:adarshsrivastava11/vt-demo-imf.git
 2. cd vt-demo-imf
 3. python manage.py runserver
 
