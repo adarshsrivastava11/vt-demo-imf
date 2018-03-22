@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>Demo Page</title>
+	<script type="text/javascript">
+	function form_sumbit() {
+		document.getElementById("graph").innerHTML = "";
+    	document.getElementById("data_form").submit();
+		}
+	</script>
+</head>
+<body>
+
+	<form method="post" action="/" id="data_form">
+		{% csrf_token %}
+		<input type="radio" name="type_of_graph" value="plot_day" checked> Variation of Components per Minutes<br>
+  		<input type="radio" name="type_of_graph" value="plot_B"> Variation of B with other Components per Minute<br>
+  		<input type="radio" name="type_of_graph" value="plot_xy"> Variation of Component 1 with Component 2  <br>
+  		Enter a Day* - <input type="text" name="day" value="5"> <br>
+		<select name="val_x">
+  			<option value="Bx_GSE">Bx(GSE)</option>
+ 			<option value="By_GSE">By(GSE)</option>
+  			<option value="Bz_GSE">Bz(GSE)</option>
+  			<option value="B">B</option>
+  			<option value="Flow_Speed">Flow Speed</option>
+  			<option value="Vx">Vx</option>
+  			<option value="Vy">Vy</option>
+  			<option value="Vz">Vz</option>
+		</select>
+		<select name="val_y">
+  			<option value="Bx_GSE">Bx(GSE)</option>
+ 			<option value="By_GSE">By(GSE)</option>
+  			<option value="Bz_GSE">Bz(GSE)</option>
+  			<option value="B">B</option>
+  			<option value="Flow_Speed">Flow Speed</option>
+  			<option value="Vx">Vx</option>
+  			<option value="Vy">Vy</option>
+  			<option value="Vz">Vz</option>
+		</select>
+		<input type="button" value="Plot" onclick="form_sumbit()" />
+	</form>
+	<div id="graph">
+	{{graph_code | safe}}
+	</div>
+</body>
+</html>
