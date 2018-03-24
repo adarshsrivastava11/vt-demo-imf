@@ -2,7 +2,8 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import mpld3
 
@@ -121,11 +122,17 @@ def main_page(request):
     val_y = request.POST.get('val_y', False)
     if type_of_plot != False and day != False:
         if (val_x != False and type_of_plot == "plot_day"):
+            g = ""
             g = plot_day(val_x,int(day))
+            fig.clf()
         if (val_x != False and val_y != False and type_of_plot == "plot_xy"):
+            g = ""
             g = plot_xy(val_x,val_y,int(day))
+            fig.clf()
         if (val_x != False and type_of_plot == "plot_B"):
+            g = ""
             g = plot_B(val_x,int(day))
+            fig.clf()
     return render(request,'demo.html',{'graph_code':g})
 def output_page(request,code):
     return render(request,'demo.html',{'graph_code':code})

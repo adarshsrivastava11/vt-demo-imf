@@ -12,10 +12,11 @@
 
 	<form method="post" action="/" id="data_form">
 		{% csrf_token %}
-		<input type="radio" name="type_of_graph" value="plot_day" checked> Variation of Components per Minutes<br>
-  		<input type="radio" name="type_of_graph" value="plot_B"> Variation of B with other Components per Minute<br>
+		<input type="radio" name="type_of_graph" value="plot_day" checked> Variation of Component 1 per Minutes
+  		<input type="radio" name="type_of_graph" value="plot_B"> Variation of B with other Component 1 per Minute
   		<input type="radio" name="type_of_graph" value="plot_xy"> Variation of Component 1 with Component 2  <br>
   		Enter a Day* - <input type="text" name="day" value="5"> <br>
+  		Component 1 -
 		<select name="val_x">
   			<option value="Bx_GSE">Bx(GSE)</option>
  			<option value="By_GSE">By(GSE)</option>
@@ -26,6 +27,8 @@
   			<option value="Vy">Vy</option>
   			<option value="Vz">Vz</option>
 		</select>
+		<br>
+		Component 2 - 
 		<select name="val_y">
   			<option value="Bx_GSE">Bx(GSE)</option>
  			<option value="By_GSE">By(GSE)</option>
@@ -36,6 +39,7 @@
   			<option value="Vy">Vy</option>
   			<option value="Vz">Vz</option>
 		</select>
+		<br>
 		<input type="button" value="Plot" onclick="form_sumbit()" />
 	</form>
 	<div id="graph">
