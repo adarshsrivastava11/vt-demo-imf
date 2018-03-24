@@ -11,5 +11,4 @@ pip install "git+https://github.com/javadba/mpld3@display_fix"
 1. git clone git@github.com:adarshsrivastava11/vt-demo-imf.git
 2. cd vt-demo-imf
 3. python manage.py runserver
-
 ```
