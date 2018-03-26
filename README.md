@@ -1,14 +1,10 @@
-# How to Run
-## Install Django - 
-https://www.djangoproject.com/download/
-## Install Matplotlib - 
-pip install matplotlib
-pip install jinja2
-## Install Mpld3 - 
-pip install "git+https://github.com/javadba/mpld3@display_fix"
-## Running the Server - 
+# How to Run 
 ```
-1. git clone git@github.com:adarshsrivastava11/vt-demo-imf.git
-2. cd vt-demo-imf
-3. python manage.py runserver
+1. pip install django<2
+2. pip install matplotlib
+3. pip install jinja2
+4. pip install "git+https://github.com/javadba/mpld3@display_fix"
+5. git clone git@github.com:adarshsrivastava11/vt-demo-imf.git
+6. cd vt-demo-imf
+7. python manage.py runserver
 ```
